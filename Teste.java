@@ -1,21 +1,22 @@
-package InterfacesPolimorfismo;
+package ClasseAbstrata;
 import java.util.*;
 
 public class Teste{
     public static void main(String[] args){
-         int x=0;
-        ArrayList<Imprimivel> impr = new ArrayList<Imprimivel>();
-        
-        impr.add(0, new Relatorio());
-        impr.add(1, new Contrato());
-        
-        for( x=0; x < 10; x=x+1){
-            if (impr.get(x) == null){ 
-            }
-            
-            else{
-                impr.get(x).imprimir();
-            }
-        }   
+         ArrayList<FormaGeometrica> formas = new ArrayList<FormaGeometrica>(); //sempre repet, dentro dos <> é o tipo do ArrayList,
+                                             //o ultimo tem () pois está crinado objestos 
+         
+         formas.add(0, new Circulo(10.00));//indice, objeto -> o indice tem que começar do 0 e seguir a seguencia
+         
+         formas.get(0).calcularArea();
+         
+         Retangulo retang = new Retangulo();
+         retang.valores(10.00, 2.00); //usar os metodos somente do filho, antes de add na lista
+         
+         formas.add(1, retang);//ao adicionar na list o objeto passa a ser do tipo da lista
+         
+         formas.get(1).calcularArea();
+         
+         
     }
 }
