@@ -1,16 +1,21 @@
-package HerancaPolimosfismo;
-
+package InterfacesPolimorfismo;
 import java.util.*;
 
 public class Teste{
-     public static void main(String[] args){
-      
-         List<Veiculo> veiculos = new ArrayList<Veiculo>();
-         
-         veiculos.add(new Carro());
-         veiculos.get(0).mover();
-         
-         veiculos.add(new Bicicleta());
-         veiculos.get(1).mover();
-     }
+    public static void main(String[] args){
+         int x=0;
+        ArrayList<Imprimivel> impr = new ArrayList<Imprimivel>();
+        
+        impr.add(0, new Relatorio());
+        impr.add(1, new Contrato());
+        
+        for( x=0; x < 10; x=x+1){
+            if (impr.get(x) == null){ 
+            }
+            
+            else{
+                impr.get(x).imprimir();
+            }
+        }   
+    }
 }
